@@ -20,6 +20,9 @@ def fast_endpoint():
 @app.get("/slow")
 def slow_endpoint():
     time.sleep(0.5)
+    # pip install fastapi uvicorn pydantic locust
+    # uvicorn target_api:app --port 8000
+    # locust -f locustfile.py --host http://127.0.0.1:8000
     return {"status": "ok", "type": "slow"}
 
 @app.post("/items")
